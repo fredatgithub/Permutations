@@ -37,9 +37,13 @@ namespace Permutations
 
     public static string Permute(string theString, int position)
     {
-      string tbackupChar = theString[position - 1].ToString();
-      string result = theString.Substring(0, theString.Length - 1);
-      result += theString[position] + theString[position - 1];
+      //string backupChar = theString[position - 1].ToString();
+      //string result = theString.Substring(0, theString.Length - position - 1);
+      //result += backupChar + theString[position - 1];
+      //return result;
+      var tmp = theString.Split();
+      string backup = tmp[position];
+      string result = "";
       return result;
     }
   }
