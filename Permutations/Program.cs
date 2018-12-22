@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace Permutations
 {
-  class Program
+  public class Program
   {
     static void Main()
     {
