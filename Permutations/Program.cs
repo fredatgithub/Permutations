@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Text;
 
 namespace Permutations
 {
@@ -37,14 +38,23 @@ namespace Permutations
 
     public static string Permute(string theString, int position)
     {
-      //string backupChar = theString[position - 1].ToString();
-      //string result = theString.Substring(0, theString.Length - position - 1);
-      //result += backupChar + theString[position - 1];
-      //return result;
-      var tmp = theString.Split();
-      string backup = tmp[position];
-      string result = "";
-      return result;
+      char[] letters = new char[theString.Length];
+      for (int i = 0; i < theString.Length; i++)
+      {
+        letters[i] = theString[i];
+      }
+
+      char backup = letters[position - 2];
+      letters[position - 2] = letters[position - 1];
+      letters[position - 1] = backup;
+      StringBuilder result = new StringBuilder();
+      for (int i = 0; i < letters.Length; i++)
+      {
+        result.Append(letters[i]);
+      }
+
+      var test = result.ToString();
+      return result.ToString();
     }
   }
 }
