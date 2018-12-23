@@ -26,13 +26,13 @@ namespace Permutations
       string startSequence = initialString;
       do
       {
-        for (int i = initialString.Length - 1; i > 1; i--)
+        for (int i = initialString.Length; i > 1; i--)
         {
           initialString = Permute(initialString, i);
           result.Add(initialString);
         }
       } while (startSequence != initialString);
-
+      result.RemoveAt(result.Count - 1);
       return result;
     }
 
