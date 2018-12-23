@@ -17,6 +17,20 @@ namespace UnitTestPermutations
       Assert.IsTrue(ListsAreEqualed(result, expected));
     }
 
+    [TestMethod]
+    public void TestMethod_FindAllPermutations_1234()
+    {
+      const string source = "1234";
+      var expected = new List<string>
+      {
+        "1234", "1243", "1423", "4123", "4132", "4312", "3412",
+        "3421", "3241", "2341", "2314", "2134"
+      };
+      List<string> result = Program.FindAllPermutations(source);
+      Assert.AreEqual(result.Count, expected.Count);
+      Assert.IsTrue(ListsAreEqualed(result, expected));
+    }
+
     public static bool ListsAreEqualed(List<string> source, List<string> target)
     {
       bool result = true;
